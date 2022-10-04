@@ -1,11 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import App from "./components/App";
+import { directors } from "../data";
+import NameMovies from "./NamMovie";
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById("root")
-);
+function Directors() {
+  const directorList = directors.map(director=>
+   <NameMovies key={director.name} director= {director}/>);
+
+
+return(
+  <div> 
+    <h1>Directors Page</h1>
+    {directorList}
+    </div>
+ 
+)
+}
+export default Directors;
